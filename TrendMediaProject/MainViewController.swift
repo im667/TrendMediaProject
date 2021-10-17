@@ -20,9 +20,23 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         mainTableView.delegate = self
         mainTableView.dataSource = self
         
-        self.navigationItem.title = "main"
+        mainTableView.rowHeight = UITableView.automaticDimension
+        self.title = "main"
         
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "CastViewController") as! CastViewController 
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tvShowInfo.tvShow.count
@@ -48,4 +62,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         300
     }
 
+   
+    
+    @IBAction func SearchBtn(_ sender: UIBarButtonItem) {
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        
+        let nav = UINavigationController(rootViewController: vc)
+        
+        nav.modalPresentationStyle = .fullScreen
+        
+        present(nav, animated: true, completion: nil)
+        
+    }
+    
 }

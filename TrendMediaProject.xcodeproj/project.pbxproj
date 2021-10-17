@@ -18,6 +18,9 @@
 		04ADA52F271C3E7E00FB4482 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADA52E271C3E7E00FB4482 /* SearchViewController.swift */; };
 		04ADA531271C419300FB4482 /* TvShowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADA530271C419300FB4482 /* TvShowInfo.swift */; };
 		04F2851D271C49C8000A8E15 /* Tvshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2851C271C49C8000A8E15 /* Tvshow.swift */; };
+		04F28521271C5D73000A8E15 /* CastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F28520271C5D73000A8E15 /* CastViewController.swift */; };
+		04F28523271C603C000A8E15 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F28522271C603C000A8E15 /* CastTableViewCell.swift */; };
+		04F28525271C6EBB000A8E15 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F28524271C6EBB000A8E15 /* SearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		04ADA52E271C3E7E00FB4482 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		04ADA530271C419300FB4482 /* TvShowInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowInfo.swift; sourceTree = "<group>"; };
 		04F2851C271C49C8000A8E15 /* Tvshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tvshow.swift; sourceTree = "<group>"; };
+		04F28520271C5D73000A8E15 /* CastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastViewController.swift; sourceTree = "<group>"; };
+		04F28522271C603C000A8E15 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
+		04F28524271C6EBB000A8E15 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,9 @@
 				04867FB4271ADBE1003199F6 /* SceneDelegate.swift */,
 				04867FB6271ADBE1003199F6 /* ViewController.swift */,
 				04867FB8271ADBE1003199F6 /* Main.storyboard */,
+				04F28524271C6EBB000A8E15 /* SearchTableViewCell.swift */,
+				04F28522271C603C000A8E15 /* CastTableViewCell.swift */,
+				04F28520271C5D73000A8E15 /* CastViewController.swift */,
 				04ADA52E271C3E7E00FB4482 /* SearchViewController.swift */,
 				04ADA52C271C3B9600FB4482 /* MainTableViewCell.swift */,
 				04867FC6271C2442003199F6 /* MainViewController.swift */,
@@ -157,7 +166,10 @@
 				04ADA531271C419300FB4482 /* TvShowInfo.swift in Sources */,
 				04F2851D271C49C8000A8E15 /* Tvshow.swift in Sources */,
 				04867FB7271ADBE1003199F6 /* ViewController.swift in Sources */,
+				04F28525271C6EBB000A8E15 /* SearchTableViewCell.swift in Sources */,
 				04867FB3271ADBE1003199F6 /* AppDelegate.swift in Sources */,
+				04F28521271C5D73000A8E15 /* CastViewController.swift in Sources */,
+				04F28523271C603C000A8E15 /* CastTableViewCell.swift in Sources */,
 				04867FB5271ADBE1003199F6 /* SceneDelegate.swift in Sources */,
 				04ADA52D271C3B9600FB4482 /* MainTableViewCell.swift in Sources */,
 				04867FC7271C2442003199F6 /* MainViewController.swift in Sources */,

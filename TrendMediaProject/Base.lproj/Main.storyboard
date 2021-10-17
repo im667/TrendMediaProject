@@ -22,7 +22,11 @@
                                 <items>
                                     <navigationItem title="Main" id="NQc-47-fGz">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="list.dash" catalog="system" id="IVF-pG-p7K"/>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="2tN-R6-hnw"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="2tN-R6-hnw">
+                                            <connections>
+                                                <action selector="SearchBtn:" destination="BYZ-38-t0r" id="7ay-TM-JUA"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -133,17 +137,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQG-GY-FCF">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5te-o4-N5w">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="192" width="414" height="774"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="187" id="JcH-Tx-I1d">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SearchTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="187" id="JcH-Tx-I1d" customClass="SearchTableViewCell" customModule="TrendMediaProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="187"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JcH-Tx-I1d" id="6m9-jn-Zny">
@@ -177,6 +176,12 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="searchImageView" destination="6nY-nC-SAo" id="sxT-kX-ZVr"/>
+                                            <outlet property="searchReleaseDate" destination="mOX-IF-lc0" id="2Pu-DV-yIv"/>
+                                            <outlet property="searchStory" destination="OnQ-9F-klg" id="seL-G0-2ng"/>
+                                            <outlet property="searchTitle" destination="R1N-hF-rBu" id="yol-gS-SFM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -187,19 +192,35 @@
                                     <navigationItem title="Title" id="CJ9-98-kAH"/>
                                 </items>
                             </navigationBar>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s50-Gi-R6A">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="EJv-97-GEK"/>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQG-GY-FCF">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="am3-dG-G8o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="SeachBar" destination="fQG-GY-FCF" id="Buv-gZ-M8u"/>
+                        <outlet property="SearchTableView" destination="5te-o4-N5w" id="fdx-la-p8s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cNT-tM-hj4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1934.7826086956522" y="86.383928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Cast View Controller-->
         <scene sceneID="fqY-NS-KgD">
             <objects>
-                <viewController id="82E-79-q9V" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CastViewController" id="82E-79-q9V" customClass="CastViewController" customModule="TrendMediaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9PR-7O-SJj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,7 +230,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="103" id="SSn-oY-ci3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="103" id="SSn-oY-ci3" customClass="CastTableViewCell" customModule="TrendMediaProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="103"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SSn-oY-ci3" id="emA-kS-6cb">
@@ -236,6 +257,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="castImageView" destination="nQA-ck-Nu1" id="SvP-Zk-Fdh"/>
+                                            <outlet property="castName" destination="5ua-HQ-xiL" id="0Z3-fr-BYa"/>
+                                            <outlet property="castRole" destination="xng-Xg-wqy" id="F9x-Cz-9Cz"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -243,6 +269,9 @@
                         <viewLayoutGuide key="safeArea" id="ieA-x6-4og"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="castTableView" destination="Nfh-qZ-4Ot" id="lLn-lf-4JW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="68V-TN-Pbd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
