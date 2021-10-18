@@ -9,6 +9,9 @@ import UIKit
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchTvShowInfo.tvShow.count
     }
@@ -42,6 +45,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var SearchTableView: UITableView!
     
     @IBOutlet weak var SeachBar: UISearchBar!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

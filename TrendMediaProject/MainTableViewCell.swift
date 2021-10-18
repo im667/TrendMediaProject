@@ -12,8 +12,6 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
     
-    static let identifier = "mainTableViewCell"
-
     @IBOutlet weak var mainGenre: UILabel!
     
     
@@ -33,5 +31,7 @@ class MainTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
 
 }

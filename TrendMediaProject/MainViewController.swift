@@ -11,6 +11,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let tvShowInfo = TvShowInfo()
     
+    var indexPathRow = 0
+    
+    
     @IBOutlet weak var mainTableView: UITableView!
     
     
@@ -19,22 +22,34 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         mainTableView.delegate = self
         mainTableView.dataSource = self
-        
+        mainTableView.estimatedRowHeight = 300
         mainTableView.rowHeight = UITableView.automaticDimension
         self.title = "main"
         
+        let backBarButtonItem = UIBarButtonItem(title: "뒤뒤", style: .plain, target: self, action: #selector(IsClickedBackBtn))
+        
+        self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+ 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "CastViewController") as! CastViewController 
         
+        // 1. sb
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        // 2. vc
+        guard let vc = sb.instantiateViewController(withIdentifier: "CastViewController") as? CastViewController else { return }
+        
+        
+        // pass data
+        let row = tvShowInfo.tvShow[indexPath.row]
+        vc.tvShowInfoData = row
+        
+        // 3.push
         self.navigationController?.pushViewController(vc, animated: true)
+        
+        
     }
     
     
@@ -43,6 +58,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else { return UITableViewCell()}
         
         let row = tvShowInfo.tvShow[indexPath.row]
@@ -54,7 +70,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.mainTitle.text = row.title
         cell.mainRate.text = "\(row.rate)"
         
-        
         return cell
     }
     
@@ -62,7 +77,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         300
     }
 
-   
+    @objc func IsClickedBackBtn() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func onBackBarButtonClicked () {
+            navigationController?.popViewController(animated: true)
+        }
+    
     
     @IBAction func SearchBtn(_ sender: UIBarButtonItem) {
         
@@ -76,6 +98,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         present(nav, animated: true, completion: nil)
         
+        
+        print("SearchClicked")
     }
     
 }
