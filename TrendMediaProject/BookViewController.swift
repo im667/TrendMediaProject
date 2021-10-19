@@ -14,7 +14,7 @@ class BookViewController: UIViewController {
     
     static let identifier = "BookViewController"
     
-    var style = ToastStyle()
+    var Toaststyle = ToastStyle()
 
     @IBOutlet weak var BookCollectionView: UICollectionView!
     
@@ -95,8 +95,9 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        style.messageColor = getRandomColor()
-        self.view.makeToast("Toast", duration: 2.0, position: .bottom)
+        
+        self.view.makeToast("number \(indexPath.item) Toast", duration: 2.0, position: .bottom, style:.init())
+        
     }
     
     
