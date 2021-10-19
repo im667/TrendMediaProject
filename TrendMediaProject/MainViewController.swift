@@ -24,10 +24,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         mainTableView.dataSource = self
         mainTableView.estimatedRowHeight = 300
         mainTableView.rowHeight = UITableView.automaticDimension
+        
         self.title = "main"
         
-        let backBarButtonItem = UIBarButtonItem(title: "뒤뒤", style: .plain, target: self, action: #selector(IsClickedBackBtn))
+        let SearchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(SearchButton(_:)))
         
+        let backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(IsClickedBackBtn))
+        
+        self.navigationItem.rightBarButtonItem = SearchButton
         self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     
@@ -35,18 +39,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // 1. sb
+      
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
-        // 2. vc
+      
         guard let vc = sb.instantiateViewController(withIdentifier: "CastViewController") as? CastViewController else { return }
         
         
-        // pass data
+      
         let row = tvShowInfo.tvShow[indexPath.row]
         vc.tvShowInfoData = row
         
-        // 3.push
+        
         self.navigationController?.pushViewController(vc, animated: true)
         
         
@@ -86,7 +90,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     
     
-    @IBAction func SearchBtn(_ sender: UIBarButtonItem) {
+    @objc func SearchButton(_ sender: UIBarButtonItem) {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
@@ -100,6 +104,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         print("SearchClicked")
+        
     }
+  
     
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CastViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -13,29 +14,33 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var tvShowInfoData : TvShow?
     
-   
-    
-    
-    
-    
     static let identifier = "CastViewController"
     
+    @IBOutlet weak var backgroundImgView: UIImageView!
+    
+    @IBOutlet weak var posterImgView: UIImageView!
+    
+    @IBOutlet weak var CastTitleLabel: UILabel!
     
     @IBOutlet weak var castTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        navigationItem.title = "Cast"
         
-    
-        navigationItem.title = "출연/제작"
-        self.navigationController?.navigationBar.topItem?.title = "back"
         
         castTableView.delegate = self
         castTableView.dataSource = self
         castTableView.estimatedRowHeight = 150
         castTableView.rowHeight = UITableView.automaticDimension
         
+        CastTitleLabel.textColor = .green
+        CastTitleLabel.text = tvShowInfoData?.title
+        
+        let url = URL(string: tvShowInfoData?.backdropImage ?? "")
+        backgroundImgView.kf.setImage(with:url)
+        posterImgView.kf.setImage(with:url)
         
     }
     
