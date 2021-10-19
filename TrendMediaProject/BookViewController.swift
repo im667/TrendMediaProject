@@ -7,11 +7,14 @@
 
 import UIKit
 import Kingfisher
+import Toast
 
 
 class BookViewController: UIViewController {
     
     static let identifier = "BookViewController"
+    
+    var style = ToastStyle()
 
     @IBOutlet weak var BookCollectionView: UICollectionView!
     
@@ -28,11 +31,11 @@ class BookViewController: UIViewController {
        
         //flow 레이아웃
         let layout = UICollectionViewFlowLayout()
-        let spacing :CGFloat = 20 //Int연산 불가 type적용해야함.
-        let width = UIScreen.main.bounds.width - (spacing * 3)
+        let spacing :CGFloat = 16 //Int연산 불가 type적용해야함.
+        let width = UIScreen.main.bounds.width - (spacing * 1.5)
         
         //셀의 너비와 높이(CGsize(구조체))
-        layout.itemSize = CGSize(width: width / 2.5, height: (width/2))
+        layout.itemSize = CGSize(width: width / 2.7, height: (width/2))
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumInteritemSpacing = spacing
         layout.minimumLineSpacing = spacing
@@ -72,7 +75,12 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
         let row = bookInfo.tvShow[indexPath.row]
         cell.bookCollectionTitleLabel.text = row.title
+        cell.bookCollectionTitleLabel.textColor = .white
+        
+        
         cell.bookCollectionRateLabel.text = "\(row.rate)"
+        cell.bookCollectionRateLabel.textColor = .white
+        
         
         let url = URL(string: row.backdropImage)
         cell.bookCollectionImageView.kf.setImage(with: url)
@@ -81,10 +89,15 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.layer.cornerRadius = 8
         
         
+        
     return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        style.messageColor = getRandomColor()
+        self.view.makeToast("Toast", duration: 2.0, position: .bottom)
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
