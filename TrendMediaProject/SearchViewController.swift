@@ -10,17 +10,34 @@ import UIKit
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
+       @IBOutlet weak var SearchTableView: UITableView!
+       
+       @IBOutlet weak var SeachBar: UISearchBar!
+    
+    let searchTvShowInfo = TvShowInfo()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        SearchTableView.delegate = self
+        SearchTableView.dataSource = self
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeBtn))
+
+    }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchTvShowInfo.tvShow.count
+        return 10
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return searchTvShowInfo.tvShow.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as? SearchTableViewCell else { return UITableViewCell() }
     
         let row = searchTvShowInfo.tvShow[indexPath.row]
@@ -37,32 +54,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return 88
     }
     
-    let searchTvShowInfo = TvShowInfo()
- 
-    @IBOutlet weak var SearchTableView: UITableView!
     
-    @IBOutlet weak var SeachBar: UISearchBar!
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        SearchTableView.delegate = self
-        SearchTableView.dataSource = self
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeBtn))
-        
-        
-
-    }
     @objc func closeBtn() {
         self.dismiss(animated: true, completion: nil)
     }
-
-    
 
 }

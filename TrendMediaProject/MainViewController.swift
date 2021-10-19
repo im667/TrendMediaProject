@@ -107,5 +107,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
   
+    @IBAction func goToBookPage(_ sender: Any) {
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let vc = sb.instantiateViewController(withIdentifier: "BookViewController") as? BookViewController else {return}
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
 }

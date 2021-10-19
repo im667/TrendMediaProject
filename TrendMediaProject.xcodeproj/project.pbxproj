@@ -18,6 +18,10 @@
 		04ADA52F271C3E7E00FB4482 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADA52E271C3E7E00FB4482 /* SearchViewController.swift */; };
 		04ADA531271C419300FB4482 /* TvShowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADA530271C419300FB4482 /* TvShowInfo.swift */; };
 		04DE6609271F437C00690EDA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 04DE6608271F437C00690EDA /* Kingfisher */; };
+		04DE660B271F555300690EDA /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE660A271F555300690EDA /* LocationTableViewCell.swift */; };
+		04DE660D271F669D00690EDA /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE660C271F669D00690EDA /* BookViewController.swift */; };
+		04DE6614271F687700690EDA /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE6612271F687700690EDA /* BookCollectionViewCell.swift */; };
+		04DE6615271F687700690EDA /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DE6613271F687700690EDA /* BookCollectionViewCell.xib */; };
 		04F2851D271C49C8000A8E15 /* Tvshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2851C271C49C8000A8E15 /* Tvshow.swift */; };
 		04F28521271C5D73000A8E15 /* CastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F28520271C5D73000A8E15 /* CastViewController.swift */; };
 		04F28523271C603C000A8E15 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F28522271C603C000A8E15 /* CastTableViewCell.swift */; };
@@ -37,6 +41,10 @@
 		04ADA52C271C3B9600FB4482 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		04ADA52E271C3E7E00FB4482 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		04ADA530271C419300FB4482 /* TvShowInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowInfo.swift; sourceTree = "<group>"; };
+		04DE660A271F555300690EDA /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		04DE660C271F669D00690EDA /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		04DE6612271F687700690EDA /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		04DE6613271F687700690EDA /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		04F2851C271C49C8000A8E15 /* Tvshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tvshow.swift; sourceTree = "<group>"; };
 		04F28520271C5D73000A8E15 /* CastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastViewController.swift; sourceTree = "<group>"; };
 		04F28522271C603C000A8E15 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
@@ -78,6 +86,10 @@
 				04867FB4271ADBE1003199F6 /* SceneDelegate.swift */,
 				04867FB6271ADBE1003199F6 /* ViewController.swift */,
 				04867FB8271ADBE1003199F6 /* Main.storyboard */,
+				04DE6612271F687700690EDA /* BookCollectionViewCell.swift */,
+				04DE6613271F687700690EDA /* BookCollectionViewCell.xib */,
+				04DE660C271F669D00690EDA /* BookViewController.swift */,
+				04DE660A271F555300690EDA /* LocationTableViewCell.swift */,
 				04F28524271C6EBB000A8E15 /* SearchTableViewCell.swift */,
 				04F28522271C603C000A8E15 /* CastTableViewCell.swift */,
 				04F28520271C5D73000A8E15 /* CastViewController.swift */,
@@ -158,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04867FBF271ADBE5003199F6 /* LaunchScreen.storyboard in Resources */,
+				04DE6615271F687700690EDA /* BookCollectionViewCell.xib in Resources */,
 				04867FBC271ADBE5003199F6 /* Assets.xcassets in Resources */,
 				04867FBA271ADBE1003199F6 /* Main.storyboard in Resources */,
 			);
@@ -176,9 +189,12 @@
 				04867FB7271ADBE1003199F6 /* ViewController.swift in Sources */,
 				04F28525271C6EBB000A8E15 /* SearchTableViewCell.swift in Sources */,
 				04867FB3271ADBE1003199F6 /* AppDelegate.swift in Sources */,
+				04DE660B271F555300690EDA /* LocationTableViewCell.swift in Sources */,
 				04F28521271C5D73000A8E15 /* CastViewController.swift in Sources */,
 				04F28523271C603C000A8E15 /* CastTableViewCell.swift in Sources */,
+				04DE660D271F669D00690EDA /* BookViewController.swift in Sources */,
 				04867FB5271ADBE1003199F6 /* SceneDelegate.swift in Sources */,
+				04DE6614271F687700690EDA /* BookCollectionViewCell.swift in Sources */,
 				04ADA52D271C3B9600FB4482 /* MainTableViewCell.swift in Sources */,
 				04867FC7271C2442003199F6 /* MainViewController.swift in Sources */,
 			);
