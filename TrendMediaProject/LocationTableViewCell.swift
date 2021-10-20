@@ -9,16 +9,18 @@ import UIKit
 
 class LocationTableViewCell: UITableViewCell {
     
+    static let identifier = "LocationTableViewCell"
     
-    @IBOutlet weak var overViewTextView: UITextView!
+    @IBOutlet weak var overViewLabel: UILabel!
     
-    @IBOutlet weak var LocationButton: UIButton!
+    
+    @IBOutlet weak var locationBtn: UIButton!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
        
-        LocationButton.setImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
+        locationBtn.setImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

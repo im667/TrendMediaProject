@@ -9,6 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
     let tvShowInfo = TvShowInfo()
     
     var indexPathRow = 0
