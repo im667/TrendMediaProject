@@ -30,9 +30,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let SearchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(SearchButton(_:)))
         
+        let MapButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(mapViewButton(_:)))
+        
         let backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(IsClickedBackBtn))
         
-        self.navigationItem.rightBarButtonItem = SearchButton
+        
+        
+        self.navigationItem.rightBarButtonItems = [MapButton,SearchButton]
+        
         self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     
@@ -108,6 +113,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
   
+    @objc func mapViewButton(_ sender:UIBarButtonItem){
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: CinemaViewController.identifier) as! CinemaViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
     @IBAction func goToBookPage(_ sender: Any) {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)

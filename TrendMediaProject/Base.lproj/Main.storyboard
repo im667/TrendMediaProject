@@ -390,6 +390,30 @@
             </objects>
             <point key="canvasLocation" x="2876.811594202899" y="83.705357142857139"/>
         </scene>
+        <!--Cinema View Controller-->
+        <scene sceneID="uHn-Ku-90p">
+            <objects>
+                <viewController storyboardIdentifier="CinemaViewController" id="2Rm-wa-zHI" customClass="CinemaViewController" customModule="TrendMediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fZN-TV-uh3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="25V-iH-hxU">
+                                <rect key="frame" x="0.0" y="168" width="414" height="694"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oCp-XT-1x6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="cinemaMapView" destination="25V-iH-hxU" id="5Ii-v0-x06"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H8j-ai-FxI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3808.6956521739135" y="85.714285714285708"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="FeQ-QA-gpL">
             <objects>

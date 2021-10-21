@@ -14,6 +14,7 @@
 		04867FBC271ADBE5003199F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04867FBB271ADBE5003199F6 /* Assets.xcassets */; };
 		04867FBF271ADBE5003199F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04867FBD271ADBE5003199F6 /* LaunchScreen.storyboard */; };
 		04867FC7271C2442003199F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04867FC6271C2442003199F6 /* MainViewController.swift */; };
+		0493AE412721427A00601A64 /* CinemaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493AE402721427A00601A64 /* CinemaViewController.swift */; };
 		04ADA52D271C3B9600FB4482 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADA52C271C3B9600FB4482 /* MainTableViewCell.swift */; };
 		04ADA52F271C3E7E00FB4482 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADA52E271C3E7E00FB4482 /* SearchViewController.swift */; };
 		04ADA531271C419300FB4482 /* TvShowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADA530271C419300FB4482 /* TvShowInfo.swift */; };
@@ -39,6 +40,7 @@
 		04867FBE271ADBE5003199F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04867FC0271ADBE5003199F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04867FC6271C2442003199F6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0493AE402721427A00601A64 /* CinemaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaViewController.swift; sourceTree = "<group>"; };
 		04ADA52C271C3B9600FB4482 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		04ADA52E271C3E7E00FB4482 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		04ADA530271C419300FB4482 /* TvShowInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowInfo.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				04867FB4271ADBE1003199F6 /* SceneDelegate.swift */,
 				04867FB6271ADBE1003199F6 /* ViewController.swift */,
 				04867FB8271ADBE1003199F6 /* Main.storyboard */,
+				0493AE402721427A00601A64 /* CinemaViewController.swift */,
 				04DE6612271F687700690EDA /* BookCollectionViewCell.swift */,
 				04DE6613271F687700690EDA /* BookCollectionViewCell.xib */,
 				04DE660C271F669D00690EDA /* BookViewController.swift */,
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04ADA52F271C3E7E00FB4482 /* SearchViewController.swift in Sources */,
+				0493AE412721427A00601A64 /* CinemaViewController.swift in Sources */,
 				04ADA531271C419300FB4482 /* TvShowInfo.swift in Sources */,
 				04F2851D271C49C8000A8E15 /* Tvshow.swift in Sources */,
 				04867FB7271ADBE1003199F6 /* ViewController.swift in Sources */,
