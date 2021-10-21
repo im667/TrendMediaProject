@@ -18,7 +18,7 @@ class CinemaViewController: UIViewController {
     
     @IBOutlet weak var cinemaMapView: MKMapView!
     
-    
+    //commit
     override func viewDidLoad() {
         super.viewDidLoad()
         
