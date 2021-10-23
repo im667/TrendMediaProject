@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0443DC17272480D7007397D6 /* CinemaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443DC16272480D7007397D6 /* CinemaList.swift */; };
+		0443DC19272487F7007397D6 /* Cinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443DC18272487F6007397D6 /* Cinema.swift */; };
 		04867FB3271ADBE1003199F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04867FB2271ADBE1003199F6 /* AppDelegate.swift */; };
 		04867FB5271ADBE1003199F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04867FB4271ADBE1003199F6 /* SceneDelegate.swift */; };
 		04867FB7271ADBE1003199F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04867FB6271ADBE1003199F6 /* ViewController.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0443DC16272480D7007397D6 /* CinemaList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaList.swift; sourceTree = "<group>"; };
+		0443DC18272487F6007397D6 /* Cinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinema.swift; sourceTree = "<group>"; };
 		04867FAF271ADBE1003199F6 /* TrendMediaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendMediaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04867FB2271ADBE1003199F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04867FB4271ADBE1003199F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				04867FB4271ADBE1003199F6 /* SceneDelegate.swift */,
 				04867FB6271ADBE1003199F6 /* ViewController.swift */,
 				04867FB8271ADBE1003199F6 /* Main.storyboard */,
+				0443DC16272480D7007397D6 /* CinemaList.swift */,
+				0443DC18272487F6007397D6 /* Cinema.swift */,
 				0493AE402721427A00601A64 /* CinemaViewController.swift */,
 				04DE6612271F687700690EDA /* BookCollectionViewCell.swift */,
 				04DE6613271F687700690EDA /* BookCollectionViewCell.xib */,
@@ -192,8 +198,10 @@
 			files = (
 				04ADA52F271C3E7E00FB4482 /* SearchViewController.swift in Sources */,
 				0493AE412721427A00601A64 /* CinemaViewController.swift in Sources */,
+				0443DC19272487F7007397D6 /* Cinema.swift in Sources */,
 				04ADA531271C419300FB4482 /* TvShowInfo.swift in Sources */,
 				04F2851D271C49C8000A8E15 /* Tvshow.swift in Sources */,
+				0443DC17272480D7007397D6 /* CinemaList.swift in Sources */,
 				04867FB7271ADBE1003199F6 /* ViewController.swift in Sources */,
 				04F28525271C6EBB000A8E15 /* SearchTableViewCell.swift in Sources */,
 				04867FB3271ADBE1003199F6 /* AppDelegate.swift in Sources */,

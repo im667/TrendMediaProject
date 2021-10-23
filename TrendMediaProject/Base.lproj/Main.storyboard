@@ -398,13 +398,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="25V-iH-hxU">
-                                <rect key="frame" x="0.0" y="168" width="414" height="694"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="25V-iH-hxU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oCp-XT-1x6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="25V-iH-hxU" firstAttribute="top" secondItem="oCp-XT-1x6" secondAttribute="top" id="1X5-b8-qwJ"/>
+                            <constraint firstItem="25V-iH-hxU" firstAttribute="bottom" secondItem="oCp-XT-1x6" secondAttribute="bottom" id="HQN-nY-oWa"/>
+                            <constraint firstItem="25V-iH-hxU" firstAttribute="trailing" secondItem="oCp-XT-1x6" secondAttribute="trailing" id="lo3-TK-nUh"/>
+                            <constraint firstItem="25V-iH-hxU" firstAttribute="leading" secondItem="oCp-XT-1x6" secondAttribute="leading" id="r8H-vx-i4p"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="cinemaMapView" destination="25V-iH-hxU" id="5Ii-v0-x06"/>

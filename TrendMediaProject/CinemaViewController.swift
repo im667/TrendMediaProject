@@ -9,12 +9,16 @@ import UIKit
 import MapKit
 import CoreLocation
 import CoreLocationUI
+import SwiftUI
 
 class CinemaViewController: UIViewController {
+    
     
     static let identifier = "CinemaViewController"
     
     let locationManager = CLLocationManager()
+    
+    var cinemaList = CinemaList()
     
     @IBOutlet weak var cinemaMapView: MKMapView!
     
@@ -36,15 +40,55 @@ class CinemaViewController: UIViewController {
         
         //2.CLLocationManager() delegate연결
         locationManager.delegate = self
+
+        let BtnImg = UIImage(systemName:"mappin.and.ellipse")
+        let filterBtn = UIBarButtonItem(image:BtnImg, style:.plain, target: self, action: #selector(filterBtn(_:)))
+        
+        
+        self.navigationItem.rightBarButtonItem = filterBtn
+        
+        ShowAnnotation()
+    }
+
+    func ShowAnnotation () {
+        
+        for cinema in cinemaList.mapAnnotations {
+            let location = CLLocationCoordinate2D(latitude: cinema.latitude, longitude: cinema.longitude)
+            let annotation = MKPointAnnotation()
+            annotation.title = cinema.type
+            annotation.subtitle = "TestSubtitle"
+            annotation.coordinate = location
+            
+            
+            cinemaMapView.addAnnotation(annotation)
+            
+        }
     }
     
+    
 }
+
 
 
 
 extension CinemaViewController: CLLocationManagerDelegate {
     
   
+    @objc func filterBtn(_ sender: UIBarButtonItem) {
+        
+    //    let sb = UIStoryboard(name: "Main", bundle: nil)
+    //
+    //    let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+    //
+    //    let nav = UINavigationController(rootViewController: vc)
+    //
+    //    nav.modalPresentationStyle = .fullScreen
+    //
+    //    present(nav, animated: true, completion: nil)
+    //
+    //
+    //    print("SearchClicked")
+    }
     
     
     func checkUserLocationServicesAuthorization(){
@@ -107,6 +151,7 @@ extension CinemaViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print(#function)
         print(locations)
+    
         
         if let coordinate = locations.last?.coordinate {
             
@@ -115,12 +160,14 @@ extension CinemaViewController: CLLocationManagerDelegate {
             annotation.coordinate = coordinate
             cinemaMapView.addAnnotation(annotation)
             
-            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
             let region = MKCoordinateRegion(center: coordinate, span: span)
             cinemaMapView.setRegion(region, animated: true)
             
             //8. 중요
             locationManager.startUpdatingLocation()
+            
+            showTitle(coordi:coordinate)
             
         } else {
             print("Location Cannot Find")
@@ -157,8 +204,19 @@ extension CinemaViewController: CLLocationManagerDelegate {
     }
     //5.위치 접근 실패시
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(#function)
+        let coordinate = CLLocationCoordinate2D(latitude: 37.5561245942409024, longitude: 126.97172843927478)
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let region = MKCoordinateRegion(center: coordinate, span: span)
+        
+        let annotation = MKPointAnnotation()
+        annotation.title="서울시청"
+        annotation.coordinate = coordinate
+        cinemaMapView.addAnnotation(annotation)
+        
+        cinemaMapView.setRegion(region, animated: true)
     }
+    
+    
     
     //6-1 iOS14 미만: 앱이 위치 관리자를 생성하고, 승인 상태가 변경이 될 때 대리자에게 승인 상태를 알려줌.
     //권한이 변경될 때 마다 감지해서 실행이 됨
@@ -171,6 +229,23 @@ extension CinemaViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         print(#function)
         checkUserLocationServicesAuthorization()
+    }
+    
+    //내 위치 표시하기
+    
+    func showTitle(coordi:CLLocationCoordinate2D){
+        let geocoder = CLGeocoder()
+        let findLocation = CLLocation(latitude: coordi.latitude, longitude: coordi.longitude)
+        let locale = Locale(identifier: "Ko-kr")
+        geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
+            if let address : [CLPlacemark] = placemarks {
+                let gu = address[0].locality!
+                let dong = address[0].thoroughfare!
+                
+                self.title = "\(gu) \(dong)"
+            }
+            
+        })
     }
 
 
