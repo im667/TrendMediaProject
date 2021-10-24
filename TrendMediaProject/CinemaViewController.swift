@@ -65,8 +65,29 @@ class CinemaViewController: UIViewController {
         }
     }
     
+    func filter(keyword:String){
+        for cinema in cinemaList.mapAnnotations{
+            let location = CLLocationCoordinate2D(latitude: cinema.latitude, longitude: cinema.longitude)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = location
+            annotation.title = cinema.type
+            
+            cinemaMapView.addAnnotation(annotation)
+            
+            let removes = cinemaMapView.annotations.filter { anno in
+                if anno.title == keyword {return false}
+                else {
+                    return true
+                }
+            }
+            cinemaMapView.removeAnnotations(removes)
+        }
+    }
+    
     
 }
+
+
 
 
 
@@ -76,18 +97,31 @@ extension CinemaViewController: CLLocationManagerDelegate {
   
     @objc func filterBtn(_ sender: UIBarButtonItem) {
         
-    //    let sb = UIStoryboard(name: "Main", bundle: nil)
-    //
-    //    let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
-    //
-    //    let nav = UINavigationController(rootViewController: vc)
-    //
-    //    nav.modalPresentationStyle = .fullScreen
-    //
-    //    present(nav, animated: true, completion: nil)
-    //
-    //
-    //    print("SearchClicked")
+        let alert = UIAlertController(title: "영화관 선택", message: "영화관을 선택해주세요", preferredStyle: .actionSheet)
+       
+        let actionLotteCinema = UIAlertAction(title: "롯데시네마", style: .default){ action
+            in self.filter(keyword:"롯데시네마")
+        }
+        let actionMegaBox = UIAlertAction(title: "메가박스", style: .default){ action
+            in self.filter(keyword:"메가박스")
+        }
+        let actionCgv = UIAlertAction(title: "CGV", style: .default){ action
+            in self.filter(keyword:"CGV")
+        }
+        let actionShowAll = UIAlertAction(title: "전체보기", style: .default){ action
+            in self.ShowAnnotation()
+        }
+        
+        let actionCancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(actionLotteCinema)
+        alert.addAction(actionMegaBox)
+        alert.addAction(actionCgv)
+        alert.addAction(actionShowAll)
+        alert.addAction(actionCancel)
+        
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     
