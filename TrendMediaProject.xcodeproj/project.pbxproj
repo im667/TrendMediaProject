@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0443DC17272480D7007397D6 /* CinemaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443DC16272480D7007397D6 /* CinemaList.swift */; };
 		0443DC19272487F7007397D6 /* Cinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443DC18272487F6007397D6 /* Cinema.swift */; };
+		0443DC7827279D3B007397D6 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 0443DC7727279D3B007397D6 /* SwiftyJSON */; };
+		0443DC7B27279D4D007397D6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0443DC7A27279D4D007397D6 /* Alamofire */; };
+		0443DC7D2727A7F7007397D6 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443DC7C2727A7F7007397D6 /* MovieModel.swift */; };
 		04867FB3271ADBE1003199F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04867FB2271ADBE1003199F6 /* AppDelegate.swift */; };
 		04867FB5271ADBE1003199F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04867FB4271ADBE1003199F6 /* SceneDelegate.swift */; };
 		04867FB7271ADBE1003199F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04867FB6271ADBE1003199F6 /* ViewController.swift */; };
@@ -35,6 +38,7 @@
 /* Begin PBXFileReference section */
 		0443DC16272480D7007397D6 /* CinemaList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaList.swift; sourceTree = "<group>"; };
 		0443DC18272487F6007397D6 /* Cinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinema.swift; sourceTree = "<group>"; };
+		0443DC7C2727A7F7007397D6 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		04867FAF271ADBE1003199F6 /* TrendMediaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendMediaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04867FB2271ADBE1003199F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04867FB4271ADBE1003199F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0443DC7827279D3B007397D6 /* SwiftyJSON in Frameworks */,
+				0443DC7B27279D4D007397D6 /* Alamofire in Frameworks */,
 				04DE6618271F718B00690EDA /* Toast in Frameworks */,
 				04DE6609271F437C00690EDA /* Kingfisher in Frameworks */,
 			);
@@ -105,6 +111,7 @@
 				04F28522271C603C000A8E15 /* CastTableViewCell.swift */,
 				04F28520271C5D73000A8E15 /* CastViewController.swift */,
 				04ADA52E271C3E7E00FB4482 /* SearchViewController.swift */,
+				0443DC7C2727A7F7007397D6 /* MovieModel.swift */,
 				04ADA52C271C3B9600FB4482 /* MainTableViewCell.swift */,
 				04867FC6271C2442003199F6 /* MainViewController.swift */,
 				04867FBB271ADBE5003199F6 /* Assets.xcassets */,
@@ -135,6 +142,8 @@
 			packageProductDependencies = (
 				04DE6608271F437C00690EDA /* Kingfisher */,
 				04DE6617271F718B00690EDA /* Toast */,
+				0443DC7727279D3B007397D6 /* SwiftyJSON */,
+				0443DC7A27279D4D007397D6 /* Alamofire */,
 			);
 			productName = TrendMediaProject;
 			productReference = 04867FAF271ADBE1003199F6 /* TrendMediaProject.app */;
@@ -167,6 +176,8 @@
 			packageReferences = (
 				04DE6607271F437C00690EDA /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				04DE6616271F718B00690EDA /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				0443DC7627279D3B007397D6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				0443DC7927279D4D007397D6 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 04867FB0271ADBE1003199F6 /* Products */;
 			projectDirPath = "";
@@ -196,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0443DC7D2727A7F7007397D6 /* MovieModel.swift in Sources */,
 				04ADA52F271C3E7E00FB4482 /* SearchViewController.swift in Sources */,
 				0493AE412721427A00601A64 /* CinemaViewController.swift in Sources */,
 				0443DC19272487F7007397D6 /* Cinema.swift in Sources */,
@@ -434,6 +446,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0443DC7627279D3B007397D6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+		0443DC7927279D4D007397D6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		04DE6607271F437C00690EDA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -453,6 +481,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0443DC7727279D3B007397D6 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0443DC7627279D3B007397D6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		0443DC7A27279D4D007397D6 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0443DC7927279D4D007397D6 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		04DE6608271F437C00690EDA /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04DE6607271F437C00690EDA /* XCRemoteSwiftPackageReference "Kingfisher" */;

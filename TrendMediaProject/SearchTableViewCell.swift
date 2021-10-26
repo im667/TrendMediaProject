@@ -8,11 +8,13 @@
 import UIKit
 
 class SearchTableViewCell: UITableViewCell {
+    
+    static let identifier = "SearchTableViewCell"
+
 
     @IBOutlet weak var searchImageView: UIImageView!
     
     @IBOutlet weak var searchTitle: UILabel!
-    
     
     @IBOutlet weak var searchReleaseDate: UILabel!
     
