@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044189E62729D7F800E30ADD /* TMDBApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044189E52729D7F800E30ADD /* TMDBApiManager.swift */; };
+		044189E82729D82800E30ADD /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044189E72729D82800E30ADD /* Contants.swift */; };
+		044189EA2729DE1E00E30ADD /* TMDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044189E92729DE1E00E30ADD /* TMDBModel.swift */; };
 		0443DC17272480D7007397D6 /* CinemaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443DC16272480D7007397D6 /* CinemaList.swift */; };
 		0443DC19272487F7007397D6 /* Cinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443DC18272487F6007397D6 /* Cinema.swift */; };
 		0443DC7827279D3B007397D6 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 0443DC7727279D3B007397D6 /* SwiftyJSON */; };
@@ -36,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		044189E52729D7F800E30ADD /* TMDBApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBApiManager.swift; sourceTree = "<group>"; };
+		044189E72729D82800E30ADD /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
+		044189E92729DE1E00E30ADD /* TMDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBModel.swift; sourceTree = "<group>"; };
 		0443DC16272480D7007397D6 /* CinemaList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaList.swift; sourceTree = "<group>"; };
 		0443DC18272487F6007397D6 /* Cinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinema.swift; sourceTree = "<group>"; };
 		0443DC7C2727A7F7007397D6 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
@@ -111,9 +117,12 @@
 				04F28522271C603C000A8E15 /* CastTableViewCell.swift */,
 				04F28520271C5D73000A8E15 /* CastViewController.swift */,
 				04ADA52E271C3E7E00FB4482 /* SearchViewController.swift */,
+				044189E52729D7F800E30ADD /* TMDBApiManager.swift */,
+				044189E72729D82800E30ADD /* Contants.swift */,
 				0443DC7C2727A7F7007397D6 /* MovieModel.swift */,
 				04ADA52C271C3B9600FB4482 /* MainTableViewCell.swift */,
 				04867FC6271C2442003199F6 /* MainViewController.swift */,
+				044189E92729DE1E00E30ADD /* TMDBModel.swift */,
 				04867FBB271ADBE5003199F6 /* Assets.xcassets */,
 				04867FBD271ADBE5003199F6 /* LaunchScreen.storyboard */,
 				04ADA530271C419300FB4482 /* TvShowInfo.swift */,
@@ -214,10 +223,13 @@
 				04ADA531271C419300FB4482 /* TvShowInfo.swift in Sources */,
 				04F2851D271C49C8000A8E15 /* Tvshow.swift in Sources */,
 				0443DC17272480D7007397D6 /* CinemaList.swift in Sources */,
+				044189EA2729DE1E00E30ADD /* TMDBModel.swift in Sources */,
+				044189E82729D82800E30ADD /* Contants.swift in Sources */,
 				04867FB7271ADBE1003199F6 /* ViewController.swift in Sources */,
 				04F28525271C6EBB000A8E15 /* SearchTableViewCell.swift in Sources */,
 				04867FB3271ADBE1003199F6 /* AppDelegate.swift in Sources */,
 				04DE660B271F555300690EDA /* LocationTableViewCell.swift in Sources */,
+				044189E62729D7F800E30ADD /* TMDBApiManager.swift in Sources */,
 				04F28521271C5D73000A8E15 /* CastViewController.swift in Sources */,
 				04F28523271C603C000A8E15 /* CastTableViewCell.swift in Sources */,
 				04DE660D271F669D00690EDA /* BookViewController.swift in Sources */,

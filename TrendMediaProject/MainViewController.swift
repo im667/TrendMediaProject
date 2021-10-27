@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -14,12 +15,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var indexPathRow = 0
     
+    var tmdbData: [TMDBModel] = []
+    var pageNum = 1
+    
+    let totalPageCount = 1000
     
     @IBOutlet weak var mainTableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         mainTableView.delegate = self
         mainTableView.dataSource = self
@@ -39,6 +46,31 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationItem.rightBarButtonItems = [MapButton,SearchButton]
         
         self.navigationItem.backBarButtonItem = backBarButtonItem
+        
+        fetchTMDBData()
+    }
+    
+    
+    
+    func fetchTMDBData() {
+            
+            TMDBApiManager.shared.fetchData(page: pageNum) { json in
+                       
+                       for db in json["results"].arrayValue {
+                           let title = db["original_title"].stringValue
+                           let rate = db["vote_average"].doubleValue
+                           let posterImage = db["poster_path"].stringValue
+                           
+                           let data = TMDBModel(original_title: title, vote_average: rate, poster_path: posterImage)
+                           self.tmdbData.append(data)
+                           
+                       }
+                       
+                       self.mainTableView.reloadData()
+                       
+                   }
+                   
+
     }
     
  
@@ -64,21 +96,36 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tvShowInfo.tvShow.count
+        return tmdbData.count
     }
+    
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+            
+            for indexPath in indexPaths {
+                if tmdbData.count - 1 == indexPath.row && tmdbData.count < totalPageCount { // 마지막에 도달하면
+                    pageNum += 1
+                    fetchTMDBData()
+                    print("prefetch: \(indexPath)")
+                }
+                
+            }
+            
+        }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else { return UITableViewCell()}
         
-        let row = tvShowInfo.tvShow[indexPath.row]
+        let row = tmdbData[indexPath.row]
         
-        let url = URL(string: row.backdropImage)
-        let data = try? Data(contentsOf: url!)
-        cell.mainImageView.image = UIImage(data: data!)
-        cell.mainGenre.text = row.genre
-        cell.mainTitle.text = row.title
-        cell.mainRate.text = "\(row.rate)"
+        cell.mainTitle.text = row.original_title
+    
+       cell.mainRate.text = "\(row.vote_average)"
+
+        let url = URL(string: Endpoint.tmdbPosterURL + row.poster_path)
+
+        cell.mainImageView.kf.setImage(with: url)
         
         return cell
     }
