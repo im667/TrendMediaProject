@@ -61,7 +61,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                            let rate = db["vote_average"].doubleValue
                            let posterImage = db["poster_path"].stringValue
                            
-                           let data = TMDBModel(original_title: title, vote_average: rate, poster_path: posterImage)
+                           let backdropImage = db["backdrop_path"].stringValue
+                           let id = db["id"].intValue
+                           let overview = db["overview"].stringValue
+                           
+                           let data = TMDBModel(original_title: title, vote_average: rate, poster_path: posterImage, backdrop_path:backdropImage ,id: id, overview:overview)
                            self.tmdbData.append(data)
                            
                        }
@@ -85,11 +89,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
       
-        let row = tvShowInfo.tvShow[indexPath.row]
-        vc.tvShowInfoData = row
-        
+        let row = tmdbData[indexPath.row]
+        vc.TMDBData=row
         
         self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+        
         
         
     }

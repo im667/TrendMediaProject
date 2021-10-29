@@ -14,4 +14,6 @@ struct Endpoint {
     static let tmdbURL = "https://api.themoviedb.org/3/trending/movie/day?api_key="
     
     static let tmdbPosterURL = "https://image.tmdb.org/t/p/original"
+    
+    static let tmdbGetCredit = "https://api.themoviedb.org/3/movie/"
 }

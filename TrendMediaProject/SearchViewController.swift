@@ -20,7 +20,9 @@ class SearchViewController: UIViewController, UITableViewDataSourcePrefetching {
         for indexPath in indexPaths {
             if movieData.count - 1 == indexPath.row && movieData.count < totalCount {
                 startPage += 10
-                fetchMovieData()
+                if let text = searchBar.text {
+                    fetchMovieData(query:text)
+                }
                 print("prefetch:\(indexPath)")
             }
         }
@@ -34,7 +36,7 @@ class SearchViewController: UIViewController, UITableViewDataSourcePrefetching {
     var movieData:[MovieModel] = []
     
        @IBOutlet weak var SearchTableView: UITableView!
-       @IBOutlet weak var SeachBar: UISearchBar!
+       @IBOutlet weak var searchBar: UISearchBar!
     
     //페이지네이션 1: 스타트페이지 설정
     var startPage = 1
@@ -51,10 +53,14 @@ class SearchViewController: UIViewController, UITableViewDataSourcePrefetching {
         //페이지 네이션 3: 프로토콜 연결
         SearchTableView.prefetchDataSource = self
         
+        searchBar.delegate = self
+        
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeBtn))
-       
-        fetchMovieData()
+        
+        if let text = searchBar.text {
+            fetchMovieData(query:text)
+        }
     }
     
     @objc func closeBtn() {
@@ -64,20 +70,49 @@ class SearchViewController: UIViewController, UITableViewDataSourcePrefetching {
 }
 
 
-
+extension SearchViewController: UISearchBarDelegate {
+    
+    //검색버튼 눌렸을 때 실행(키보드 리턴키)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            movieData.removeAll()
+            startPage = 1
+            fetchMovieData(query:text)
+        }
+    }
+    
+    //취소버튼눌렸을때
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: false)
+        movieData.removeAll()
+        SearchTableView.reloadData()
+    }
+    
+    
+   
+    
+    //커서가 깜빡이기 시작할때를 인식한다.
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    
+}
 
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     
-    func fetchMovieData() {
+    func fetchMovieData(query:String) {
         
-       if let query = "어벤져스".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+        if let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
         let url = "https://openapi.naver.com/v1/search/movie.json?query=\(query)&display=10&start=\(startPage)"
         let headers:HTTPHeaders = [
             "X-Naver-Client-Id":"pCD7fvTZfdSST7e7Uf5r",
             "X-Naver-Client-Secret":"9Fy1tKyG9O"
         ]
+            
+           
         
         AF.request(url, method: .get, headers: headers).validate().responseJSON { response in
             switch response.result {
@@ -148,8 +183,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
         
     }
-
-    
 
     
 
